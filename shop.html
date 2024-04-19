@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Stamp Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .stamp-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .stamp {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .stamp:hover {
+            transform: translateY(-5px);
+        }
+
+        .stamp img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .stamp h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stamp p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .stamp button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .stamp button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        // Function to add item to cart and redirect to cart page
+        function addToCart(title, price) {
+            var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.push({ title: title, price: price });
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            // Redirect to cart page after adding item to cart
+            window.location.href = 'cart.html';
+        }
+    </script>
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Stamp Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h2>Welcome to Stamp Shop</h2>
+        <p>Explore our collection of rare and collectible stamps from around the world.</p>
+
+        <!-- Brief explanation of rare stamp collection -->
+        <section>
+            <h3>Rare Stamp Collection</h3>
+            <p>Discover our curated selection of rare stamps, featuring historical artifacts and unique designs that are sought after by collectors worldwide. Each stamp tells a story, from its origins to its significance in history, making them valuable additions to any collection.</p>
+        </section>
+
+        <!-- Stamps listing section -->
+        
+        <section class="stamp-list">
+            <div class="stamp">
+                <img src="https://via.placeholder.com/300x200" alt="Indian Stamps">
+                <h3>Indian Stamps</h3>
+                <p>Indian Stamps reflects the country's old and rich cultural heritage.</p>
+                <p>Price: $10</p>
+                <!-- Call the addToCart function when the button is clicked -->
+                <button onclick="addToCart('Indian Stamps', 10)">Add to Cart</button>
+            </div>
+            <div class="stamp">
+                <img src="https://via.placeholder.com/300x200" alt="Stamp 2">
+                <h3>Stamp Title 2</h3>
+                <p>Description of Stamp 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Price: $15</p>
+                <button onclick="addToCart('Stamp Title 2', 15)">Add to Cart</button>
+            </div>
+            <!-- Add more stamps as needed -->
+        </section>
+
+        <!-- Additional content -->
+        <section>
+            <h3>Additional Content</h3>
+            <p>Explore our collection further or learn more about stamp collecting:</p>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Stamp Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>
